@@ -113,7 +113,9 @@
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .parchment-card::before {
@@ -175,6 +177,36 @@
   margin-top: 0.4rem;
   font-weight: 500;
   font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+/* Delete button */
+.quest-delete {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #8b5a2b;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quest-delete:hover {
+  opacity: 1;
+  background-color: rgba(139, 90, 43, 0.15);
+}
+
+.quest-delete:active {
+  transform: scale(0.95);
 }
 
 /* Buttons */

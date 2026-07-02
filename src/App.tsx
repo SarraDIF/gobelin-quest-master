@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import GoblinAvatar from './components/GoblinAvatar/GoblinAvatar'
 import type {Quest, QuestType} from './types/quest'
 import {questTypes} from './data/questTypes'
@@ -6,29 +6,52 @@ import './styles/layout.css'
 import './styles/panels.css'
 import './styles/animations.css'
 
-function App() {
-    const [quests, setQuests] = useState<Quest[]>([
-        {
-            id: 1,
-            title: 'Feed Bernie',
-            done: true,
-            type: 'cooking',
-        },
-        {
-            id: 2,
-            title: 'Bake goblin bread',
-            done: false,
-            type: 'crafting',
-        },
-    ])
+const defaultQuests: Quest[] = [
+    {
+        id: 1,
+        title: 'Feed Bernie',
+        done: true,
+        type: 'cooking',
+    },
+    {
+        id: 2,
+        title: 'Bake goblin bread',
+        done: false,
+        type: 'crafting',
+    },
+]
 
-    const [stats, setStats] = useState({
-        stamina: 72,
-        chaos: 38,
-        hunger: 84,
-        focus: 51,
-        energy: 0,
-    })
+const defaultStats = {
+    stamina: 72,
+    chaos: 38,
+    hunger: 84,
+    focus: 51,
+    energy: 0,
+}
+
+type Stats = typeof defaultStats
+
+const loadQuests = (): Quest[] => {
+    try {
+        const stored = localStorage.getItem('goblin-quests')
+        return stored ? JSON.parse(stored) : defaultQuests
+    } catch {
+        return defaultQuests
+    }
+}
+
+const loadStats = (): Stats => {
+    try {
+        const stored = localStorage.getItem('goblin-stats')
+        return stored ? JSON.parse(stored) : defaultStats
+    } catch {
+        return defaultStats
+    }
+}
+
+function App() {
+    const [quests, setQuests] = useState<Quest[]>(loadQuests)
+    const [stats, setStats] = useState<Stats>(loadStats)
 
     const [questTitle, setQuestTitle] = useState('')
     const [questType, setQuestType] = useState<QuestType>('admin')
@@ -79,6 +102,18 @@ function App() {
             }))
         }
     }
+
+    const deleteQuest = (id: number) => {
+        setQuests(quests.filter((quest) => quest.id !== id))
+    }
+
+    useEffect(() => {
+        localStorage.setItem('goblin-quests', JSON.stringify(quests))
+    }, [quests])
+
+    useEffect(() => {
+        localStorage.setItem('goblin-stats', JSON.stringify(stats))
+    }, [stats])
 
     return (
         <>
@@ -176,6 +211,16 @@ function App() {
                                     <div className="quest-type">
                                         {questTypes[quest.type as QuestType]}
                                     </div>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            deleteQuest(quest.id)
+                                        }}
+                                        className="quest-delete"
+                                        aria-label="Delete quest"
+                                    >
+                                        ✕
+                                    </button>
                                 </div>
                             ))
                         )}
