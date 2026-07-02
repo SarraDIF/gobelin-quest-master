@@ -1,0 +1,108 @@
+.goblin-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.goblin-avatar__speech-bubble {
+    background: #f3e9dc;
+    color: #1a1a1a;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    max-width: 260px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.goblin-avatar__speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #f3e9dc;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.goblin-avatar__scene {
+    width: 240px;
+    height: 240px;
+    margin-top: -0.25rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+            radial-gradient(circle at center, rgba(120, 255, 160, 0.28), transparent 62%),
+            radial-gradient(circle, #4f965d 0%, #1f4029 100%);
+    box-shadow: 0 0 45px rgba(80, 200, 120, 0.22);
+    overflow: visible;
+}
+
+.goblin-avatar__image {
+    width: 230px;
+    height: 230px;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+    animation-name: goblin-breathe;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.goblin-avatar--hungry .goblin-avatar__scene {
+    background:
+            radial-gradient(circle at center, rgba(255, 185, 95, 0.3), transparent 62%),
+            radial-gradient(circle, #6f8f4c 0%, #3a2f1f 100%);
+}
+
+.goblin-avatar--chaos .goblin-avatar__image {
+    animation-name: goblin-chaos-shake;
+}
+
+.goblin-avatar--sleepy .goblin-avatar__image {
+    opacity: 0.78;
+}
+
+.goblin-avatar--hyperfocus .goblin-avatar__scene {
+    background:
+            radial-gradient(circle at center, rgba(120, 180, 255, 0.3), transparent 62%),
+            radial-gradient(circle, #425f83 0%, #20283a 100%);
+}
+
+@keyframes goblin-breathe {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.035);
+    }
+}
+
+@keyframes goblin-chaos-shake {
+    0%,
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateX(3px) rotate(1deg);
+    }
+
+    75% {
+        transform: translateX(-2px) rotate(-0.5deg);
+    }
+}

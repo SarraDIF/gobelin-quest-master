@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import GoblinAvatar from './GoblinAvatar'
+import GoblinAvatar from './components/GoblinAvatar/GoblinAvatar'
 
 function App() {
     const [quests, setQuests] = useState([
