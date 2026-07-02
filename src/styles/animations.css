@@ -1,0 +1,196 @@
+/* Smooth fade-in for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Gentle glow pulse for interactive elements */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(188, 255, 160, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(188, 255, 160, 0);
+  }
+}
+
+/* Shimmer effect for text */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Wood panel shine effect */
+@keyframes wood-shine {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.05;
+  }
+}
+
+/* Quest card flip on completion */
+@keyframes quest-done-flip {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.95);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Button hover bounce */
+@keyframes btn-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Fireflies floating animation */
+@keyframes fireflies-float {
+  0%, 100% {
+    opacity: 0.12;
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    opacity: 0.15;
+    transform: translateY(-15px) translateX(5px);
+  }
+  50% {
+    opacity: 0.18;
+    transform: translateY(-30px) translateX(-5px);
+  }
+  75% {
+    opacity: 0.15;
+    transform: translateY(-20px) translateX(8px);
+  }
+}
+
+/* Stat card appears with stagger */
+@keyframes stat-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Quest list item slides in */
+@keyframes quest-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Goblin mood text sway */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-0.5deg);
+  }
+  50% {
+    transform: rotate(0.5deg);
+  }
+}
+
+/* Utility animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-quest-done {
+  animation: quest-done-flip 0.4s ease-out;
+}
+
+.animate-stat-card {
+  animation: stat-appear 0.5s ease-out backwards;
+}
+
+.animate-quest-item {
+  animation: quest-slide-in 0.3s ease-out;
+}
+
+/* Staggered animations for stat cards */
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Staggered animations for quest items */
+.parchment-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.parchment-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.parchment-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.parchment-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Reduce animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

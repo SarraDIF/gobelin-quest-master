@@ -1,6 +1,6 @@
 import './GoblinAvatar.css'
 import { getGoblinMood } from './goblinMood'
-import { goblinSprites } from '../../src/assets/goblin/goblinSprites'
+import { goblinSprites } from '../../assets/goblin/registry/goblinSprites'
 
 type GoblinAvatarProps = {
     stamina: number

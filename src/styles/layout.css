@@ -1,0 +1,186 @@
+/* Main page background with forest and overlay */
+.app-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/goblin/scene/forest-background-cozy.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-y: auto;
+  z-index: 0;
+}
+
+/* Dark overlay for text readability */
+.app-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated fireflies overlay */
+.fireflies-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/goblin/effects/fireflies-cozy.png');
+  background-size: 800px 600px;
+  background-position: center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 2;
+  animation: fireflies-float 20s ease-in-out infinite;
+}
+
+@keyframes fireflies-float {
+  0%, 100% {
+    opacity: 0.12;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.18;
+    transform: translateY(-20px);
+  }
+}
+
+/* Main content wrapper - sits above overlays */
+.app-content {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #f3e9dc;
+}
+
+/* Title area */
+.app-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.app-title {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+/* Main layout grid */
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Center goblin + stats section */
+.avatar-and-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Quest list section */
+.quests-section {
+  width: 100%;
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.quests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quests-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-main {
+    gap: 2rem;
+  }
+
+  .app-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+  }
+
+  .quests-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quests-header h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(188, 255, 160, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(188, 255, 160, 0.6));
+  }
+}

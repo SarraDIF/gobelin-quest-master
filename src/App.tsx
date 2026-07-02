@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import GoblinAvatar from './components/GoblinAvatar/GoblinAvatar'
+import './styles/layout.css'
+import './styles/panels.css'
+import './styles/animations.css'
 
 function App() {
     const [quests, setQuests] = useState([
@@ -78,107 +81,83 @@ function App() {
     }
   }
 
-  const statCardStyle = {
-    background: '#2a2a2a',
-    padding: '1rem',
-    borderRadius: '12px',
-    textAlign: 'center' as const,
-  }
-
   return (
-      <div
-          style={{
-            minHeight: '100vh',
-            background: '#1a1a1a',
-            color: '#f3e9dc',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            paddingTop: '5rem',
-            fontFamily: 'system-ui',
-          }}
-      >
-        <h1 style={{ fontSize: '3rem' }}>
-          ⚔️ Goblin Quest Manager
-        </h1>
+    <>
+      <div className="app-container">
+        <div className="fireflies-overlay"></div>
+      </div>
+      
+      <div className="app-content">
+        <header className="app-header">
+          <h1 className="app-title">⚔️ Goblin Quest Manager</h1>
+        </header>
 
-        <p>
+        <div className="app-main">
+          <div className="avatar-and-stats">
             <GoblinAvatar {...stats} />
-        </p>
 
-        <div
-            style={{
-              marginTop: '2rem',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '1rem',
-              width: '400px',
-            }}
-        >
-          <div style={statCardStyle}>
-            ⚡ Stamina: {stats.stamina}
-          </div>
-
-          <div style={statCardStyle}>
-            🧠 Focus: {stats.focus}
-          </div>
-
-          <div style={statCardStyle}>
-            🍖 Hunger: {stats.hunger}
-          </div>
-
-          <div style={statCardStyle}>
-            👹 Chaos: {stats.chaos}
-          </div>
-        </div>
-        <button
-            onClick={addQuest}
-            style={{
-              marginTop: '1rem',
-              padding: '1rem 2rem',
-              borderRadius: '12px',
-              border: 'none',
-              background: '#7c5c36',
-              color: 'white',
-              fontSize: '1rem',
-              cursor: 'pointer',
-            }}
-        >
-          ➕ Add Quest
-        </button>
-
-        <div
-            style={{
-              marginTop: '3rem',
-              width: '400px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-            }}
-        >
-          {quests.map((quest) => (
-              <div
-                  key={quest.id}
-                  onClick={() => toggleQuest(quest.id)}
-                  style={{
-                    background: '#2a2a2a',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    cursor: 'pointer',
-                    border: quest.done
-                        ? '2px solid #4ade80'
-                        : '2px solid transparent',
-                    opacity: quest.done ? 0.6 : 1,
-                  }}
-              >
-                  {quest.done ? '✅' : '⚔️'} {quest.title}
-                  <div style={{ fontSize: '0.8rem', opacity: 0.7, marginTop: '0.25rem' }}>
-                      {questTypes[quest.type as QuestType]}
-                  </div>
+            <div className="stats-grid">
+              <div className="stat-card animate-stat-card">
+                <span className="stat-card__label">⚡ Stamina</span>
+                <span className="stat-card__value">{stats.stamina}</span>
               </div>
-          ))}
+
+              <div className="stat-card animate-stat-card">
+                <span className="stat-card__label">🧠 Focus</span>
+                <span className="stat-card__value">{stats.focus}</span>
+              </div>
+
+              <div className="stat-card animate-stat-card">
+                <span className="stat-card__label">🍖 Hunger</span>
+                <span className="stat-card__value">{stats.hunger}</span>
+              </div>
+
+              <div className="stat-card animate-stat-card">
+                <span className="stat-card__label">👹 Chaos</span>
+                <span className="stat-card__value">{stats.chaos}</span>
+              </div>
+            </div>
+          </div>
+
+          <section className="quests-section">
+            <div className="quests-header">
+              <h2>📜 Quests</h2>
+              <button onClick={addQuest} className="btn btn-primary">
+                ➕ New Quest
+              </button>
+            </div>
+
+            <div className="quests-list">
+              {quests.length === 0 ? (
+                <div className="empty-state">
+                  No quests yet. Add one to begin!
+                </div>
+              ) : (
+                quests.map((quest) => (
+                  <div
+                    key={quest.id}
+                    onClick={() => toggleQuest(quest.id)}
+                    className={`parchment-card animate-quest-item ${
+                      quest.done ? 'quest-done' : ''
+                    }`}
+                  >
+                    <div className="quest-title">
+                      <span className="quest-icon">
+                        {quest.done ? '✅' : '⚔️'}
+                      </span>
+                      {quest.title}
+                    </div>
+                    <div className="quest-type">
+                      {questTypes[quest.type as QuestType]}
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </section>
         </div>
       </div>
+    </>
   )
 }
 
