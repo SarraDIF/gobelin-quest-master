@@ -7,6 +7,7 @@ type GoblinAvatarProps = {
     chaos: number
     hunger: number
     focus: number
+    energy?: number
 }
 
 function GoblinAvatar(props: GoblinAvatarProps) {

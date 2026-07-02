@@ -27,6 +27,7 @@ function App() {
         chaos: 38,
         hunger: 84,
         focus: 51,
+        energy: 0,
     })
 
     const addQuest = () => {
@@ -68,6 +69,7 @@ function App() {
                 stamina: Math.min(prev.stamina + 5, 100),
                 focus: Math.min(prev.focus + 3, 100),
                 chaos: Math.max(prev.chaos - 4, 0),
+                energy: prev.energy + 10,
             }))
         }
     }
@@ -106,6 +108,11 @@ function App() {
                             <div className="stat-card animate-stat-card">
                                 <span className="stat-card__label">👹 Chaos</span>
                                 <span className="stat-card__value">{stats.chaos}</span>
+                            </div>
+
+                            <div className="stat-card animate-stat-card">
+                                <span className="stat-card__label">✨ Energy</span>
+                                <span className="stat-card__value">{stats.energy}</span>
                             </div>
                         </div>
                     </div>
