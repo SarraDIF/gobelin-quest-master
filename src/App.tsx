@@ -30,22 +30,28 @@ function App() {
         energy: 0,
     })
 
-    const addQuest = () => {
-        const title = prompt('New goblin quest:')
-        if (!title) return
+    const [questTitle, setQuestTitle] = useState('')
+    const [questType, setQuestType] = useState<QuestType>('admin')
 
-        const type = prompt(
-            'Quest type: cleaning, cooking, coding, admin, selfcare, crafting'
-        ) as QuestType
+    const addQuest = () => {
+        if (!questTitle.trim()) return
 
         const newQuest = {
             id: Date.now(),
-            title,
+            title: questTitle.trim(),
             done: false,
-            type: questTypes[type] ? type : 'admin',
+            type: questType,
         }
 
         setQuests([...quests, newQuest])
+        setQuestTitle('')
+        setQuestType('admin')
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            addQuest()
+        }
     }
 
     const toggleQuest = (id: number) => {
@@ -120,37 +126,59 @@ function App() {
                     <section className="quests-section">
                         <div className="quests-header">
                             <h2>📜 Quests</h2>
-                            <button onClick={addQuest} className="btn btn-primary">
-                                ➕ New Quest
-                            </button>
+                        </div>
+
+                        <div className="quest-form">
+                        <input
+                            type="text"
+                            placeholder="Quest title..."
+                            value={questTitle}
+                            onChange={(e) => setQuestTitle(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            className="quest-input"
+                        />
+                        <select
+                            value={questType}
+                            onChange={(e) => setQuestType(e.target.value as QuestType)}
+                            className="quest-select"
+                        >
+                            {Object.entries(questTypes).map(([key, label]) => (
+                                <option key={key} value={key}>
+                                    {label}
+                                </option>
+                            ))}
+                        </select>
+                        <button onClick={addQuest} className="btn btn-primary">
+                            ➕ Add Quest
+                        </button>
                         </div>
 
                         <div className="quests-list">
-                            {quests.length === 0 ? (
-                                <div className="empty-state">
-                                    No quests yet. Add one to begin!
-                                </div>
-                            ) : (
-                                quests.map((quest) => (
-                                    <div
-                                        key={quest.id}
-                                        onClick={() => toggleQuest(quest.id)}
-                                        className={`parchment-card animate-quest-item ${
-                                            quest.done ? 'quest-done' : ''
-                                        }`}
-                                    >
-                                        <div className="quest-title">
+                        {quests.length === 0 ? (
+                            <div className="empty-state">
+                                No quests yet. Add one to begin!
+                            </div>
+                        ) : (
+                            quests.map((quest) => (
+                                <div
+                                    key={quest.id}
+                                    onClick={() => toggleQuest(quest.id)}
+                                    className={`parchment-card animate-quest-item ${
+                                        quest.done ? 'quest-done' : ''
+                                    }`}
+                                >
+                                    <div className="quest-title">
                       <span className="quest-icon">
                         {quest.done ? '✅' : '⚔️'}
                       </span>
-                                            {quest.title}
-                                        </div>
-                                        <div className="quest-type">
-                                            {questTypes[quest.type as QuestType]}
-                                        </div>
+                                        {quest.title}
                                     </div>
-                                ))
-                            )}
+                                    <div className="quest-type">
+                                        {questTypes[quest.type as QuestType]}
+                                    </div>
+                                </div>
+                            ))
+                        )}
                         </div>
                     </section>
                 </div>

@@ -265,6 +265,43 @@
   font-size: 1.05rem;
 }
 
+/* Quest form */
+.quest-form {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.quest-input,
+.quest-select {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(139, 90, 43, 0.5);
+  border-radius: 6px;
+  background-color: #e8dcc4;
+  color: #3d2f1f;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.quest-input:focus,
+.quest-select:focus {
+  outline: none;
+  border-color: #d4a857;
+  box-shadow: 0 0 8px rgba(212, 168, 87, 0.3);
+}
+
+.quest-input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.quest-select {
+  min-width: 140px;
+}
+
 /* Responsive wood panel adjustments */
 @media (max-width: 768px) {
   .stat-card {
@@ -288,5 +325,16 @@
   .btn {
     padding: 0.65rem 1.2rem;
     font-size: 0.95rem;
+  }
+
+  .quest-form {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .quest-input,
+  .quest-select {
+    width: 100%;
+    min-width: unset;
   }
 }
