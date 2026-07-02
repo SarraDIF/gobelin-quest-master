@@ -1,0 +1,380 @@
+[
+  {
+    "title": "Gobeline Cozy Idle — Reference Base",
+    "filename": "goblin-female-cozy-idle.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Full body, relaxed idle pose, gentle smile, long soft brown hair partly visible under the hat. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Gobeline Hungry — Sandwich Mood",
+    "filename": "goblin-female-hungry.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Excited hungry expression, sparkling eyes, holding an oversized delicious sandwich with both hands, playful food-loving mood. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Sleepy — Recovery Mood",
+    "filename": "goblin-female-sleepy.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Wrapped in a soft blanket like a burrito, sleepy peaceful expression, folded purple wizard hat slipping slightly to one side, tiny lantern beside her. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Hyperfocus — Writing Mood",
+    "filename": "goblin-female-hyperfocus.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Long brown hair tied into a practical messy braid, intensely focused expression, writing rapidly in a glowing magical notebook with blue sparkles around her. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Chaos — Overwhelmed Mood",
+    "filename": "goblin-female-chaos.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Long messy brown hair flying around, hat askew, overwhelmed panicked expression, surrounded by floating papers, crumbs, bread, books, tiny tools, and magical clutter swirling around. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Proud — Quest Complete Mood",
+    "filename": "goblin-female-proud.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Proud satisfied stance, hands on hips, confident tiny smile, subtle golden sparkles around her, reward moment after completing a quest. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Baking — Bread Quest Mood",
+    "filename": "goblin-female-baking.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Wearing a small flour-dusted apron over adventurer clothes, holding a tiny loaf of rustic bread, cheeks lightly dusted with flour, joyful baker mood. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Cleaning — Tavern Reset Mood",
+    "filename": "goblin-female-cleaning.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Holding a small broom and cloth, determined cozy cleaning expression, tiny sparkles around freshly cleaned area, practical messy braid, humorous productive mood. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Forest Background Cozy — Light Layer",
+    "filename": "forest-background-cozy.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A cozy fantasy forest background for a web app companion scene, light green luminous forest, soft saturated colors, depth, magical fireflies, gentle warm light, no characters, no foreground frame, no text. 1024x1024 game background.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": false,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Stone Forest Arch — Transparent Layer",
+    "filename": "forest-arch-cozy.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A cozy fantasy stone arch covered with green vines and moss, front-facing game asset layer, transparent background, no characters, no text, warm magical lighting, painterly indie fantasy style.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Wooden Sign Empty — Transparent Layer",
+    "filename": "wooden-sign-empty.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A rustic empty wooden hanging sign for a cozy fantasy RPG UI, front-facing, small ropes, warm brown wood texture, transparent background, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Fireflies Effect — Transparent Layer",
+    "filename": "fireflies-cozy.png",
+    "path": "src/assets/goblin/effects",
+    "prompt": "A transparent PNG layer of small magical yellow-green fireflies and soft glowing particles, cozy fantasy forest atmosphere, sparse distribution, no background, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Gobeline Admin — Paperwork Mood",
+    "filename": "goblin-female-admin.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Holding scrolls and a tiny quill, slightly serious but cute administrative expression, organized paperwork mood, a few tidy parchments around her. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Coding — Magical Terminal Mood",
+    "filename": "goblin-female-coding.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Sitting with a tiny glowing magical laptop or crystal terminal, focused curious expression, blue-purple code-like runes floating around, cozy coding mood. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Self Care — Tea Mood",
+    "filename": "goblin-female-selfcare.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Holding a warm cup of tea with both hands, calm gentle smile, soft blanket shawl, cozy recovery self-care mood, warm steam curls. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Low Stamina — Tired Standing Mood",
+    "filename": "goblin-female-low-stamina.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Standing tired with droopy eyelids, slightly slumped posture, holding her hat brim, low energy but still cute and safe. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Victory Jump — Celebration Mood",
+    "filename": "goblin-female-victory.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Small joyful victory jump, arms raised, bright happy expression, golden reward sparkles, quest complete celebration pose. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Thinking — Planning Mood",
+    "filename": "goblin-female-thinking.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. One hand on chin, thoughtful curious expression, small floating question mark-shaped magical sparkles but no actual text, planning mood. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Stretch — Idle Animation Frame",
+    "filename": "goblin-female-stretch.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Relaxed stretching pose like a cozy idle animation frame, eyes closed, soft smile, arms up, hat folding gently. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Gobeline Walking — Transition Pose",
+    "filename": "goblin-female-walking.png",
+    "path": "src/assets/goblin/female",
+    "prompt": "A cozy fantasy RPG female goblin companion sprite, same character identity across all images, small cute green female goblin, large expressive ears, long brown hair, folded purple wizard hat, warm brown adventurer clothes, small leather backpack, soft painterly indie fantasy game style, slightly saturated colors, readable silhouette, cute but not childish. Cute walking pose, one foot forward, small backpack visible, ready for a quest, cheerful focused expression. Transparent PNG. No background. No text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "medium",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": [
+      "src/assets/goblin/female/goblin-female-cozy-idle.png"
+    ]
+  },
+  {
+    "title": "Foreground Mushrooms — Transparent Layer",
+    "filename": "foreground-mushrooms.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A transparent PNG foreground layer of cozy fantasy mushrooms, small flowers, moss, and leaves, painterly indie fantasy style, no characters, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Lantern Prop — Transparent Layer",
+    "filename": "prop-lantern.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A cozy fantasy brass lantern prop with warm glowing light, transparent background, painterly indie game asset, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Potion Props — Transparent Layer",
+    "filename": "props-potions.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A small set of cozy fantasy potion bottles with colorful liquid, transparent background, painterly indie game asset, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Backpack Prop — Transparent Layer",
+    "filename": "prop-backpack.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A cute worn leather adventurer backpack prop for a cozy fantasy goblin companion scene, transparent background, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Cozy Campfire — Transparent Layer",
+    "filename": "prop-campfire.png",
+    "path": "src/assets/goblin/scene",
+    "prompt": "A tiny cozy fantasy campfire with stones and warm glow, transparent PNG, painterly indie game style, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Rain Overlay — Transparent Effect",
+    "filename": "effect-rain-soft.png",
+    "path": "src/assets/goblin/effects",
+    "prompt": "A transparent PNG overlay of soft gentle rain streaks for a cozy fantasy forest scene, subtle, readable, no background, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Magic Dust Overlay — Transparent Effect",
+    "filename": "effect-magic-dust.png",
+    "path": "src/assets/goblin/effects",
+    "prompt": "A transparent PNG overlay of tiny blue and gold magical dust particles, cozy fantasy game effect, no background, no text.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": true,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Quest Card Parchment Texture",
+    "filename": "quest-card-parchment.png",
+    "path": "src/assets/ui",
+    "prompt": "A seamless cozy fantasy parchment texture for quest cards, warm beige paper, subtle fibers, no text, no symbols, tileable feel.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": false,
+    "referenceImagePaths": []
+  },
+  {
+    "title": "Dark Wood UI Texture",
+    "filename": "dark-wood-texture.png",
+    "path": "src/assets/ui",
+    "prompt": "A seamless dark fantasy wooden texture for UI panels, cozy warm brown, subtle grain, no text, no symbols.",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "quality": "low",
+    "size": "1024x1024",
+    "transparent": false,
+    "referenceImagePaths": []
+  }
+]

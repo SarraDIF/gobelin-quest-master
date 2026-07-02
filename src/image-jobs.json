@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Goblin Quest Icon",
+    "filename": "goblin-icon.png",
+    "path": "public/assets/icons",
+    "prompt": "A cute, colorful goblin character icon, fantasy RPG style, square format, vibrant colors",
+    "status": "pending"
+  },
+  {
+    "title": "Goblin Home Background",
+    "filename": "goblin-home-bg.png",
+    "path": "public/assets/backgrounds",
+    "prompt": "A cozy underground goblin home interior, fantasy game art, warm lighting, whimsical details",
+    "status": "pending"
+  }
+]

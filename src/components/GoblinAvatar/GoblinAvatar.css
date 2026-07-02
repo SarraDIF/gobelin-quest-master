@@ -32,18 +32,10 @@
 }
 
 .goblin-avatar__scene {
-    width: 240px;
-    height: 240px;
-    margin-top: -0.25rem;
-    border-radius: 999px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-            radial-gradient(circle at center, rgba(120, 255, 160, 0.28), transparent 62%),
-            radial-gradient(circle, #4f965d 0%, #1f4029 100%);
-    box-shadow: 0 0 45px rgba(80, 200, 120, 0.22);
-    overflow: visible;
+    position: relative;
 }
 
 .goblin-avatar__image {
@@ -58,9 +50,6 @@
 }
 
 .goblin-avatar--hungry .goblin-avatar__scene {
-    background:
-            radial-gradient(circle at center, rgba(255, 185, 95, 0.3), transparent 62%),
-            radial-gradient(circle, #6f8f4c 0%, #3a2f1f 100%);
 }
 
 .goblin-avatar--chaos .goblin-avatar__image {
@@ -72,9 +61,6 @@
 }
 
 .goblin-avatar--hyperfocus .goblin-avatar__scene {
-    background:
-            radial-gradient(circle at center, rgba(120, 180, 255, 0.3), transparent 62%),
-            radial-gradient(circle, #425f83 0%, #20283a 100%);
 }
 
 @keyframes goblin-breathe {

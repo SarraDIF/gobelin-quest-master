@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Goblin Quest Icon",
+    "filename": "goblin-icon.png",
+    "path": "public/assets/icons",
+    "prompt": "A cute, colorful goblin character icon, fantasy RPG style, square format, vibrant colors",
+    "status": "pending",
+    "model": "gpt-image-1",
+    "size": "1024x1024",
+    "quality": "high",
+    "transparent": false
+  },
+  {
+    "title": "Goblin Home Background",
+    "filename": "goblin-home-bg.png",
+    "path": "public/assets/backgrounds",
+    "prompt": "A cozy underground goblin home interior, fantasy game art, warm lighting, whimsical details",
+    "status": "pending",
+    "quality": "medium"
+  },
+  {
+    "title": "Quest Poster (Wide)",
+    "filename": "quest-poster.png",
+    "path": "public/assets/posters",
+    "prompt": "A fantasy RPG quest poster with adventure themes and mystical elements",
+    "status": "pending",
+    "size": "1792x1024",
+    "quality": "high"
+  },
+  {
+    "title": "Goblin Avatar Edit",
+    "filename": "goblin-avatar-edited.png",
+    "path": "public/assets/avatars",
+    "prompt": "Make the goblin wearing a fancy wizard hat and holding a staff",
+    "status": "pending",
+    "referenceImagePaths": ["public/assets/icons/goblin-icon.png"],
+    "quality": "medium"
+  },
+  {
+    "title": "Logo (Base64)",
+    "filename": "logo.base64",
+    "path": "public/assets/encoded",
+    "prompt": "A mystical glowing goblin quest emblem logo",
+    "status": "pending",
+    "quality": "high",
+    "transparent": true
+  }
+]
+
