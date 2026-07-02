@@ -6,6 +6,7 @@ import QuestCard from './components/QuestCard/QuestCard'
 import type { Quest, QuestType } from './types/quest'
 import type { Stats } from './types/stats'
 import { useLocalStorage } from './hooks/useLocalStorage'
+import { applyQuestReward } from './utils/applyQuestRewards'
 import './styles/layout.css'
 import './styles/panels.css'
 import './styles/animations.css'
@@ -69,13 +70,7 @@ function App() {
         )
 
         if (becomingDone) {
-            setStats((prev: Stats) => ({
-                ...prev,
-                stamina: Math.min(prev.stamina + 5, 100),
-                focus: Math.min(prev.focus + 3, 100),
-                chaos: Math.max(prev.chaos - 4, 0),
-                energy: prev.energy + 10,
-            }))
+            setStats((prev: Stats) => applyQuestReward(prev, clickedQuest.type))
         }
     }
 
