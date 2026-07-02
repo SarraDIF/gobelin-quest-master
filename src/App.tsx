@@ -1,7 +1,11 @@
-import {useState, useEffect} from 'react'
+import { useState } from 'react'
 import GoblinAvatar from './components/GoblinAvatar/GoblinAvatar'
-import type {Quest, QuestType} from './types/quest'
-import {questTypes} from './data/questTypes'
+import StatsPanel from './components/StatsPanel/StatsPanel'
+import QuestForm from './components/QuestForm/QuestForm'
+import QuestCard from './components/QuestCard/QuestCard'
+import type { Quest, QuestType } from './types/quest'
+import type { Stats } from './types/stats'
+import { useLocalStorage } from './hooks/useLocalStorage'
 import './styles/layout.css'
 import './styles/panels.css'
 import './styles/animations.css'
@@ -21,7 +25,7 @@ const defaultQuests: Quest[] = [
     },
 ]
 
-const defaultStats = {
+const defaultStats: Stats = {
     stamina: 72,
     chaos: 38,
     hunger: 84,
@@ -29,29 +33,9 @@ const defaultStats = {
     energy: 0,
 }
 
-type Stats = typeof defaultStats
-
-const loadQuests = (): Quest[] => {
-    try {
-        const stored = localStorage.getItem('goblin-quests')
-        return stored ? JSON.parse(stored) : defaultQuests
-    } catch {
-        return defaultQuests
-    }
-}
-
-const loadStats = (): Stats => {
-    try {
-        const stored = localStorage.getItem('goblin-stats')
-        return stored ? JSON.parse(stored) : defaultStats
-    } catch {
-        return defaultStats
-    }
-}
-
 function App() {
-    const [quests, setQuests] = useState<Quest[]>(loadQuests)
-    const [stats, setStats] = useState<Stats>(loadStats)
+    const [quests, setQuests] = useLocalStorage<Quest[]>('goblin-quests', defaultQuests)
+    const [stats, setStats] = useLocalStorage<Stats>('goblin-stats', defaultStats)
 
     const [questTitle, setQuestTitle] = useState('')
     const [questType, setQuestType] = useState<QuestType>('admin')
@@ -71,16 +55,8 @@ function App() {
         setQuestType('admin')
     }
 
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') {
-            addQuest()
-        }
-    }
-
     const toggleQuest = (id: number) => {
-        const clickedQuest = quests.find(
-            (quest) => quest.id === id
-        )
+        const clickedQuest = quests.find((quest) => quest.id === id)
 
         if (!clickedQuest) return
 
@@ -88,12 +64,12 @@ function App() {
 
         setQuests(
             quests.map((quest) =>
-                quest.id === id ? {...quest, done: becomingDone} : quest
+                quest.id === id ? { ...quest, done: becomingDone } : quest
             )
         )
 
         if (becomingDone) {
-            setStats((prev) => ({
+            setStats((prev: Stats) => ({
                 ...prev,
                 stamina: Math.min(prev.stamina + 5, 100),
                 focus: Math.min(prev.focus + 3, 100),
@@ -106,14 +82,6 @@ function App() {
     const deleteQuest = (id: number) => {
         setQuests(quests.filter((quest) => quest.id !== id))
     }
-
-    useEffect(() => {
-        localStorage.setItem('goblin-quests', JSON.stringify(quests))
-    }, [quests])
-
-    useEffect(() => {
-        localStorage.setItem('goblin-stats', JSON.stringify(stats))
-    }, [stats])
 
     return (
         <>
@@ -129,33 +97,7 @@ function App() {
                 <div className="app-main">
                     <div className="avatar-and-stats">
                         <GoblinAvatar {...stats} />
-
-                        <div className="stats-grid">
-                            <div className="stat-card animate-stat-card">
-                                <span className="stat-card__label">⚡ Stamina</span>
-                                <span className="stat-card__value">{stats.stamina}</span>
-                            </div>
-
-                            <div className="stat-card animate-stat-card">
-                                <span className="stat-card__label">🧠 Focus</span>
-                                <span className="stat-card__value">{stats.focus}</span>
-                            </div>
-
-                            <div className="stat-card animate-stat-card">
-                                <span className="stat-card__label">🍖 Hunger</span>
-                                <span className="stat-card__value">{stats.hunger}</span>
-                            </div>
-
-                            <div className="stat-card animate-stat-card">
-                                <span className="stat-card__label">👹 Chaos</span>
-                                <span className="stat-card__value">{stats.chaos}</span>
-                            </div>
-
-                            <div className="stat-card animate-stat-card">
-                                <span className="stat-card__label">✨ Energy</span>
-                                <span className="stat-card__value">{stats.energy}</span>
-                            </div>
-                        </div>
+                        <StatsPanel stats={stats} />
                     </div>
 
                     <section className="quests-section">
@@ -163,67 +105,29 @@ function App() {
                             <h2>📜 Quests</h2>
                         </div>
 
-                        <div className="quest-form">
-                        <input
-                            type="text"
-                            placeholder="Quest title..."
-                            value={questTitle}
-                            onChange={(e) => setQuestTitle(e.target.value)}
-                            onKeyDown={handleKeyDown}
-                            className="quest-input"
+                        <QuestForm
+                            questTitle={questTitle}
+                            questType={questType}
+                            setQuestTitle={setQuestTitle}
+                            setQuestType={setQuestType}
+                            onAddQuest={addQuest}
                         />
-                        <select
-                            value={questType}
-                            onChange={(e) => setQuestType(e.target.value as QuestType)}
-                            className="quest-select"
-                        >
-                            {Object.entries(questTypes).map(([key, label]) => (
-                                <option key={key} value={key}>
-                                    {label}
-                                </option>
-                            ))}
-                        </select>
-                        <button onClick={addQuest} className="btn btn-primary">
-                            ➕ Add Quest
-                        </button>
-                        </div>
 
                         <div className="quests-list">
-                        {quests.length === 0 ? (
-                            <div className="empty-state">
-                                No quests yet. Add one to begin!
-                            </div>
-                        ) : (
-                            quests.map((quest) => (
-                                <div
-                                    key={quest.id}
-                                    onClick={() => toggleQuest(quest.id)}
-                                    className={`parchment-card animate-quest-item ${
-                                        quest.done ? 'quest-done' : ''
-                                    }`}
-                                >
-                                    <div className="quest-title">
-                      <span className="quest-icon">
-                        {quest.done ? '✅' : '⚔️'}
-                      </span>
-                                        {quest.title}
-                                    </div>
-                                    <div className="quest-type">
-                                        {questTypes[quest.type as QuestType]}
-                                    </div>
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation()
-                                            deleteQuest(quest.id)
-                                        }}
-                                        className="quest-delete"
-                                        aria-label="Delete quest"
-                                    >
-                                        ✕
-                                    </button>
+                            {quests.length === 0 ? (
+                                <div className="empty-state">
+                                    No quests yet. Add one to begin!
                                 </div>
-                            ))
-                        )}
+                            ) : (
+                                quests.map((quest) => (
+                                    <QuestCard
+                                        key={quest.id}
+                                        quest={quest}
+                                        onToggle={toggleQuest}
+                                        onDelete={deleteQuest}
+                                    />
+                                ))
+                            )}
                         </div>
                     </section>
                 </div>
