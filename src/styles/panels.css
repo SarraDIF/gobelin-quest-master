@@ -1,13 +1,14 @@
 /* Wood texture panels */
 .wood-panel {
-  background-image: url('/src/assets/goblin/effects/dark-wood-texture.png');
-  background-size: 300px 300px;
+  background: linear-gradient(135deg, rgba(61, 47, 31, 0.6), rgba(61, 47, 31, 0.8)), url('/src/assets/goblin/effects/dark-wood-texture.png');
+  background-size: auto, 300px 300px;
   background-color: #3d2f1f;
   border-radius: 8px;
-  border: 2px solid rgba(139, 90, 43, 0.6);
+  border: 2px solid #8b7355;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(212, 168, 87, 0.1),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.7),
+    inset 0 0 15px rgba(0, 0, 0, 0.3),
     0 8px 16px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
@@ -15,21 +16,23 @@
 .wood-panel:hover {
   transform: translateY(-2px);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(212, 168, 87, 0.1),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.7),
+    inset 0 0 15px rgba(0, 0, 0, 0.3),
     0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Stat cards */
 .stat-card {
-  background-image: url('/src/assets/goblin/effects/dark-wood-texture.png');
-  background-size: 300px 300px;
+  background: linear-gradient(135deg, rgba(61, 47, 31, 0.5), rgba(61, 47, 31, 0.7)), url('/src/assets/goblin/effects/dark-wood-texture.png');
+  background-size: auto, 300px 300px;
   background-color: #3d2f1f;
   border-radius: 12px;
-  border: 2.5px solid rgba(212, 168, 87, 0.6);
+  border: 2.5px solid #8b7355;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(212, 168, 87, 0.15),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.4),
     0 10px 20px rgba(0, 0, 0, 0.5),
     0 0 12px rgba(212, 168, 87, 0.2);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -44,6 +47,7 @@
   gap: 0.5rem;
   position: relative;
   overflow: hidden;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 .stat-card::before {
@@ -59,10 +63,11 @@
 
 .stat-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(212, 168, 87, 0.9);
+  border-color: #d4a857;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(212, 168, 87, 0.25),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.4),
     0 15px 28px rgba(0, 0, 0, 0.6),
     0 0 16px rgba(212, 168, 87, 0.4);
 }
@@ -73,18 +78,23 @@
 
 .stat-card__label {
   font-size: 0.65rem;
-  opacity: 0.9;
+  opacity: 1;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight: 600;
+  color: #e8dcc4;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 .stat-card__value {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #e8c66d;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  color: #f4d4a8;
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.6);
   line-height: 1;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 /* Parchment quest cards */
@@ -149,6 +159,7 @@
   align-items: center;
   gap: 0.5rem;
   line-height: 1.35;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 .quest-icon {
@@ -163,14 +174,15 @@
   color: #5d4a35;
   margin-top: 0.4rem;
   font-weight: 500;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
 }
 
 /* Buttons */
 .btn {
-  background-image: url('/src/assets/goblin/effects/dark-wood-texture.png');
-  background-size: 300px 300px;
+  background: linear-gradient(135deg, rgba(139, 90, 43, 0.8), rgba(139, 90, 43, 0.95)), url('/src/assets/goblin/effects/dark-wood-texture.png');
+  background-size: auto, 300px 300px;
   background-color: #8b5a2b;
-  color: #f3e9dc;
+  color: #e8dcc4;
   border: 2px solid #6b4423;
   border-bottom: 3px solid #4a2e15;
   padding: 0.85rem 1.8rem;
@@ -180,13 +192,14 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.6),
     0 6px 16px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  font-family: Georgia, Palatino, 'Times New Roman', serif;
 }
 
 .btn::before {
@@ -202,11 +215,12 @@
 
 .btn:hover {
   background-color: #9d6b35;
+  color: #f4d4a8;
   transform: translateY(-3px);
   border-bottom-width: 4px;
   box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.6),
     0 10px 24px rgba(0, 0, 0, 0.6);
 }
 
@@ -216,9 +230,10 @@
 
 .btn:active {
   transform: translateY(-1px);
+  color: #e8dcc4;
   border-bottom-width: 2px;
   box-shadow: 
-    inset 0 2px 5px rgba(0, 0, 0, 0.6),
+    inset 0 4px 8px rgba(0, 0, 0, 0.8),
     0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
