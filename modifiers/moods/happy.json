@@ -1,0 +1,7 @@
+{
+  "name": "happy",
+  "promptAddition": "smiling, bright eyes, cheerful expression",
+  "negativePrompt": "angry, sad",
+  "tags": ["expression"],
+  "suffix": "happy"
+}

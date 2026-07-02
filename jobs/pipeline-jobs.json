@@ -1,0 +1,13 @@
+[
+  {
+    "template": "goblin-base",
+    "variants": {
+      "moods": ["happy", "focused", "sleepy"],
+      "environments": ["forest", "winter"],
+      "accessories": ["glasses"]
+    },
+    "outputPath": "generated/goblins",
+    "filenamePrefix": "goblin-coding",
+    "quality": "high"
+  }
+]

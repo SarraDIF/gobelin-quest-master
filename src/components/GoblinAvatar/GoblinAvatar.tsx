@@ -1,6 +1,6 @@
 import './GoblinAvatar.css'
-import goblinImage from '../../assets/goblin/base/goblin-cozy.png'
 import { getGoblinMood } from './goblinMood'
+import { goblinSprites } from '../../src/assets/goblin/goblinSprites'
 
 type GoblinAvatarProps = {
     stamina: number
@@ -11,6 +11,7 @@ type GoblinAvatarProps = {
 
 function GoblinAvatar(props: GoblinAvatarProps) {
     const mood = getGoblinMood(props)
+    const goblinImage = goblinSprites[mood.mood]
 
     return (
         <section className={`goblin-avatar ${mood.themeClass}`}>

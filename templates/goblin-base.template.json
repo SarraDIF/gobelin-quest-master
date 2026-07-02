@@ -1,0 +1,21 @@
+{
+  "name": "goblin-base",
+  "description": "Base goblin character for cozy fantasy assets. Small friendly goblin, expressive face, cartoon-fantasy style.",
+  "renderingStyle": "illustration, painterly, warm lighting, soft shadows",
+  "artDirection": "cozy, whimsical, hand-painted fantasy",
+  "quality": "high",
+  "transparent": true,
+  "defaultModel": "gpt-image-1",
+  "defaultSize": "1024x1024",
+  "characterDNA": {
+    "species": "tiny goblin",
+    "gender": "female",
+    "skin": "soft lime green skin",
+    "eyes": "large warm brown eyes",
+    "hair": "long wavy brown hair",
+    "hat": "oversized worn purple wizard hat with golden patches",
+    "outfit": "brown leather traveler outfit",
+    "accessory": "small potion attached to backpack",
+    "style": "cute cozy fantasy illustration"
+  }
+}
