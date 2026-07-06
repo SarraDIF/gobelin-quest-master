@@ -8,16 +8,18 @@ type GoblinAvatarProps = {
     hunger: number
     focus: number
     energy?: number
+    currentReaction?: string | null
 }
 
 function GoblinAvatar(props: GoblinAvatarProps) {
     const mood = getGoblinMood(props)
     const goblinImage = goblinSprites[mood.mood]
+    const displayText = props.currentReaction || mood.text
 
     return (
         <section className={`goblin-avatar ${mood.themeClass}`}>
             <div className="goblin-avatar__speech-bubble">
-                {mood.text}
+                {displayText}
             </div>
 
             <div className="goblin-avatar__scene">

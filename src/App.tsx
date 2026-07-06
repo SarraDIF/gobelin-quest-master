@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import GoblinAvatar from './components/GoblinAvatar/GoblinAvatar'
 import StatsPanel from './components/StatsPanel/StatsPanel'
 import QuestForm from './components/QuestForm/QuestForm'
@@ -7,6 +7,7 @@ import type { Quest, QuestType } from './types/quest'
 import type { Stats } from './types/stats'
 import { useLocalStorage } from './hooks/useLocalStorage'
 import { applyQuestReward } from './utils/applyQuestRewards'
+import { goblinReactions } from './data/goblinReactions'
 import './styles/layout.css'
 import './styles/panels.css'
 import './styles/animations.css'
@@ -40,6 +41,7 @@ function App() {
 
     const [questTitle, setQuestTitle] = useState('')
     const [questType, setQuestType] = useState<QuestType>('admin')
+    const [currentReaction, setCurrentReaction] = useState<string | null>(null)
 
     const addQuest = () => {
         if (!questTitle.trim()) return
@@ -71,12 +73,22 @@ function App() {
 
         if (becomingDone) {
             setStats((prev: Stats) => applyQuestReward(prev, clickedQuest.type))
+            setCurrentReaction(goblinReactions[clickedQuest.type as QuestType])
         }
     }
 
     const deleteQuest = (id: number) => {
         setQuests(quests.filter((quest) => quest.id !== id))
     }
+
+    useEffect(() => {
+        if (currentReaction) {
+            const timer = setTimeout(() => {
+                setCurrentReaction(null)
+            }, 4000)
+            return () => clearTimeout(timer)
+        }
+    }, [currentReaction])
 
     return (
         <>
@@ -91,7 +103,7 @@ function App() {
 
                 <div className="app-main">
                     <div className="avatar-and-stats">
-                        <GoblinAvatar {...stats} />
+                        <GoblinAvatar {...stats} currentReaction={currentReaction} />
                         <StatsPanel stats={stats} />
                     </div>
 
